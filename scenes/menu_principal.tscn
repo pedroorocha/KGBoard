@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckosn5b4q8oak"]
+
+[ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1_i4jmv"]
+[ext_resource type="Texture2D" uid="uid://biak7mb65wxw0" path="res://sprites/Fundo5.png" id="2_b3hhf"]
+[ext_resource type="FontFile" uid="uid://0tgqo0vgbhkb" path="res://fonts/BalooThambi2-Bold.ttf" id="3_brt5b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dc8x2"]
+font = ExtResource("3_brt5b")
+font_size = 50
+
+[node name="MenuPrincipal" type="Node2D"]
+script = ExtResource("1_i4jmv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324.5)
+scale = Vector2(2.12963, 0.673958)
+texture = ExtResource("2_b3hhf")
+
+[node name="Titulo" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 20.0
+offset_right = 1155.0
+offset_bottom = 114.0
+text = "MENU PRINCIPAL"
+label_settings = SubResource("LabelSettings_dc8x2")
+horizontal_alignment = 1
+
+[node name="Jogadores" type="Button" parent="."]
+offset_left = 171.0
+offset_top = 261.0
+offset_right = 511.0
+offset_bottom = 367.0
+text = "Escolher Jogadores"
+
+[node name="Regras" type="Button" parent="."]
+offset_left = 626.0
+offset_top = 260.0
+offset_right = 957.0
+offset_bottom = 366.0
+text = "Regras"
