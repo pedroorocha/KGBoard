@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckosn5b4q8oak"]
+[gd_scene load_steps=7 format=3 uid="uid://ckosn5b4q8oak"]
 
 [ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1_i4jmv"]
 [ext_resource type="Texture2D" uid="uid://biak7mb65wxw0" path="res://sprites/Fundo5.png" id="2_b3hhf"]
@@ -7,6 +7,34 @@
 [sub_resource type="LabelSettings" id="LabelSettings_dc8x2"]
 font = ExtResource("3_brt5b")
 font_size = 50
+
+[sub_resource type="GDScript" id="GDScript_40msf"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_lipa1"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="MenuPrincipal" type="Node2D"]
 script = ExtResource("1_i4jmv")
@@ -31,6 +59,7 @@ offset_top = 261.0
 offset_right = 511.0
 offset_bottom = 367.0
 text = "Escolher Jogadores"
+script = SubResource("GDScript_40msf")
 
 [node name="Regras" type="Button" parent="."]
 offset_left = 626.0
@@ -38,3 +67,52 @@ offset_top = 260.0
 offset_right = 957.0
 offset_bottom = 366.0
 text = "Regras"
+script = SubResource("GDScript_lipa1")
+
+[node name="PopupRegras" type="Popup" parent="."]
+
+[node name="Voltar" type="Button" parent="PopupRegras"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Voltar"
+
+[node name="Regras_txt" type="Label" parent="PopupRegras"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Acerte as questoes e avance para a casa que o cartao mandar.
+Erre as questoes e recue para a casa que o cartao mandar.
+Voce pode arriscar e duplicar seu salto, para isso precione o botao \"2x\" antes de ver a questao, "
+horizontal_alignment = 1
+
+[node name="PopupJogadores" type="Popup" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupJogadores"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="PopupJogadores/HBoxContainer"]
+layout_mode = 2
+text = "
+
+Escolha a quantidade de jogadores:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="PopupJogadores/HBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "2"
+popup/item_1/text = "3"
+popup/item_1/id = 1
+popup/item_2/text = "4"
+popup/item_2/id = 2
+
+[node name="IniciarJogo" type="Button" parent="PopupJogadores"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Iniciar Jogo"
+
+[connection signal="pressed" from="Jogadores" to="." method="_on_jogadores_pressed"]
+[connection signal="pressed" from="Regras" to="." method="_on_regras_pressed"]
+[connection signal="pressed" from="PopupRegras/Voltar" to="." method="_on_voltar_pressed"]
