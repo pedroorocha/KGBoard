@@ -1,5 +1,16 @@
-[gd_scene format=3 uid="uid://bt3g2g70h2ldu"]
+[gd_scene load_steps=4 format=3 uid="uid://bt3g2g70h2ldu"]
+
+[ext_resource type="Script" path="res://scripts/tabuleiro.gd" id="1_2p3k5"]
+[ext_resource type="Texture2D" uid="uid://dhacn204sks2t" path="res://sprites/Captura de tela de 2025-01-07 16-14-39.png" id="1_36bgs"]
+[ext_resource type="PackedScene" uid="uid://bkxsy8jgmuqpd" path="res://scenes/peao.tscn" id="2_gk4hm"]
 
 [node name="Tabuleiro" type="Node2D"]
+script = ExtResource("1_2p3k5")
+pawn_scene = ExtResource("2_gk4hm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 323)
+scale = Vector2(1.40686, 0.852243)
+texture = ExtResource("1_36bgs")
+
+[node name="Peoes" type="Node2D" parent="."]

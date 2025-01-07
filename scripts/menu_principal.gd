@@ -1,6 +1,7 @@
+
 extends Node2D
 
-
+var jogadores : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -27,6 +28,7 @@ func _on_voltar_pressed() -> void:
 
 
 func _on_iniciar_jogo_pressed() -> void:
-	var jogadores = $PopupJogadores/HBoxContainer/OptionButton.get_selected_id() + 2
-	get_tree().change_scene("res://scenes/tabuleiro.tscn")
+	jogadores = $PopupJogadores/HBoxContainer/OptionButton.get_selected_id() + 2
+	get_tree().root.set_meta("jogadores", jogadores)
+	get_tree().change_scene_to_file("res://scenes/tabuleiro.tscn")
 	pass # Replace with function body.

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkxsy8jgmuqpd"]
+
+[ext_resource type="Texture2D" uid="uid://b6xwqiue5nsjy" path="res://sprites/Peao-Grow-Vermelho.png" id="1_eevuy"]
+[ext_resource type="Texture2D" uid="uid://dctcjloa5v370" path="res://sprites/Peao-Grow-Azul.png" id="2_f6hwf"]
+[ext_resource type="Texture2D" uid="uid://cucm8v6hysi6d" path="res://sprites/Peao-Grow-Preto.png" id="3_4dkjd"]
+[ext_resource type="Texture2D" uid="uid://bq53u5e8n7v28" path="res://sprites/Peao-Grow-Branco.png" id="4_17w6v"]
+
+[node name="Peão" type="Node2D"]
+
+[node name="Vermelho" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, -2)
+scale = Vector2(0.06, 0.056)
+texture = ExtResource("1_eevuy")
+
+[node name="Azul" type="Sprite2D" parent="."]
+position = Vector2(-3.57628e-07, -2)
+scale = Vector2(0.057, 0.05575)
+texture = ExtResource("2_f6hwf")
+
+[node name="Preto" type="Sprite2D" parent="."]
+position = Vector2(-0.999992, -2)
+scale = Vector2(0.0590001, 0.0535)
+texture = ExtResource("3_4dkjd")
+
+[node name="Branco" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.102, 0.1005)
+texture = ExtResource("4_17w6v")

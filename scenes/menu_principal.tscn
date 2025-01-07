@@ -54,18 +54,18 @@ label_settings = SubResource("LabelSettings_dc8x2")
 horizontal_alignment = 1
 
 [node name="Jogadores" type="Button" parent="."]
-offset_left = 171.0
-offset_top = 261.0
-offset_right = 511.0
-offset_bottom = 367.0
+offset_left = 172.0
+offset_top = 256.0
+offset_right = 512.0
+offset_bottom = 362.0
 text = "Escolher Jogadores"
 script = SubResource("GDScript_40msf")
 
 [node name="Regras" type="Button" parent="."]
-offset_left = 626.0
-offset_top = 260.0
-offset_right = 957.0
-offset_bottom = 366.0
+offset_left = 654.0
+offset_top = 255.0
+offset_right = 985.0
+offset_bottom = 361.0
 text = "Regras"
 script = SubResource("GDScript_lipa1")
 
@@ -108,11 +108,14 @@ popup/item_1/id = 1
 popup/item_2/text = "4"
 popup/item_2/id = 2
 
-[node name="IniciarJogo" type="Button" parent="PopupJogadores"]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="IniciarJogo" type="Button" parent="."]
+offset_left = 466.0
+offset_top = 449.0
+offset_right = 686.0
+offset_bottom = 548.0
 text = "Iniciar Jogo"
 
 [connection signal="pressed" from="Jogadores" to="." method="_on_jogadores_pressed"]
 [connection signal="pressed" from="Regras" to="." method="_on_regras_pressed"]
 [connection signal="pressed" from="PopupRegras/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="IniciarJogo" to="." method="_on_iniciar_jogo_pressed"]
