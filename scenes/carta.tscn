@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlweushj5aba"]
+
+[ext_resource type="Script" path="res://scripts/carta.gd" id="1_2d8bg"]
+[ext_resource type="Texture2D" uid="uid://biak7mb65wxw0" path="res://sprites/Fundo5.png" id="1_dnat8"]
+[ext_resource type="FontFile" uid="uid://0tgqo0vgbhkb" path="res://fonts/BalooThambi2-Bold.ttf" id="2_6bioc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_derta"]
+font = ExtResource("2_6bioc")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Carta" type="Node2D"]
+script = ExtResource("1_2d8bg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(539, 324)
+scale = Vector2(0.614815, 0.464583)
+texture = ExtResource("1_dnat8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 376.0
+offset_top = 135.0
+offset_right = 702.0
+offset_bottom = 237.0
+label_settings = SubResource("LabelSettings_derta")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 375.0
+offset_top = 251.0
+offset_right = 702.0
+offset_bottom = 486.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 502.0
+offset_right = 612.0
+offset_bottom = 540.0
+text = "Confirmar"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 476.0
+offset_top = 103.0
+offset_right = 592.0
+offset_bottom = 128.0
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

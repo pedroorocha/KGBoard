@@ -14,3 +14,12 @@ scale = Vector2(1.40686, 0.852243)
 texture = ExtResource("1_36bgs")
 
 [node name="Peoes" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 505.0
+offset_top = 259.0
+offset_right = 628.0
+offset_bottom = 319.0
+text = "Iniciar Rodada"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

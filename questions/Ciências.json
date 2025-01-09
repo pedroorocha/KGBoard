@@ -1,0 +1,62 @@
+[
+	{
+		"id": 1,
+		"pergunta": "Qual é o planeta mais próximo do Sol?",
+		"alternativas": [
+			"Vênus",
+			"Terra",
+			"Mercúrio",
+			"Marte"
+		],
+		"resposta_correta": ["Mercúrio"],
+		"tema": "Ciências"
+	},
+	{
+		"id": 2,
+		"pergunta": "Qual é a unidade básica da vida?",
+		"alternativas": [
+			"Átomo",
+			"Célula",
+			"Molécula",
+			"Tecido"
+		],
+		"resposta_correta": ["Célula"],
+		"tema": "Ciências"
+	},
+	{
+		"id": 3,
+		"pergunta": "Qual gás é essencial para a respiração humana?",
+		"alternativas": [
+			"Oxigênio",
+			"Nitrogênio",
+			"Dióxido de Carbono",
+			"Hidrogênio"
+		],
+		"resposta_correta": ["Oxigênio"],
+		"tema": "Ciências"
+	},
+	{
+		"id": 4,
+		"pergunta": "Qual é o maior órgão do corpo humano?",
+		"alternativas": [
+			"Fígado",
+			"Cérebro",
+			"Pele",
+			"Pulmão"
+		],
+		"resposta_correta": ["Pele"],
+		"tema": "Ciências"
+	},
+	{
+		"id": 5,
+		"pergunta": "O que é fotossíntese?",
+		"alternativas": [
+			"Um processo de respiração celular",
+			"Um método de obtenção de energia pelos animais",
+			"Um processo pelo qual plantas produzem alimento usando luz solar",
+			"Um fenômeno climático"
+		],
+		"resposta_correta": ["Um processo pelo qual plantas produzem alimento usando luz solar"],
+		"tema": "Ciências"
+	}
+]

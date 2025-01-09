@@ -62,7 +62,6 @@ func _on_button_pressed() -> void:
 	for child in container.get_children():
 		if child is CheckBox and child.is_pressed():
 			temas_selecionados.append(child.text)
-	print(temas_selecionados)
 	$PopupTemas.hide()
 	pass # Replace with function body.
 
