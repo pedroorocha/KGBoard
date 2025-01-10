@@ -7,6 +7,8 @@ var resposta_correta = []
 var cor = "Vez do peão "
 #1 se tiver acertado
 var is_correct = 0
+signal carta_finalizada
+
 @onready var label_pergunta = $Label
 @onready var label_vez = $Label2
 @onready var alternativas_container = $GridContainer
@@ -21,6 +23,15 @@ func _ready() -> void:
 	# Configura os elementos da carta
 	label_pergunta.text = pergunta  # Define o texto da pergunta
 	label_vez.text = cor
+	if cor == "Vez do peão Vermelho":
+		print(cor)
+		label_vez.modulate = Color(1, 0, 0)
+	elif cor == "Vez do peão Preto":
+		label_vez.modulate = Color(0, 0, 0)
+	elif cor == "Vez do peão Azul":
+		label_vez.modulate = Color(0, 0, 1)
+	elif cor == "Vez do peão Branco":
+		label_vez.modulate = Color(1, 1, 1)
 	for alternativa in alternativas:
 		var checkbox = CheckBox.new()
 		checkbox.text = alternativa
@@ -53,11 +64,14 @@ func _on_button_pressed() -> void:
 				if child.text == alternativa_correta:
 					print("Jogador acertou!")
 					#emit_signal("jogador_acertou", jogador_id)  # Emitir um sinal, por exemplo
+					emit_signal("carta_finalizada")
 					queue_free()
 					is_correct = 1
 					get_tree().root.set_meta("is_correct", is_correct)
 					return 
 	print("Jogador errou!")
+	#emit_signal("jogador_errou", jogador_id)  # Emitir um sinal, por exemplo
+	emit_signal("carta_finalizada")
 	queue_free()
 	get_tree().root.set_meta("is_correct", is_correct)
 	return

@@ -10,6 +10,7 @@ var pergunta = ""
 var alternativas = []
 var resposta_correta = []
 var cor = ""
+var carta = null
 func _ready() -> void:
 	# Defina as posições iniciais dos peões no tabuleiro.
 	# Ajuste estas coordenadas com base no layout do tabuleiro.
@@ -52,20 +53,29 @@ func random_question(temas, indices_jogadores, ultimo_indice) -> void:
 		while not verificador:
 			var questao_sorteada = questoes[rng.randi_range(0, questoes.size() - 1)]
 			if questao_sorteada["tema"] not in id_passados:
+				var L = []
+				L.append(questao_sorteada["id"])
+				self.id_passados[questao_sorteada["tema"]] = L
 				verificador = true
 				_process_question(questao_sorteada, ultimo_indice)
 				if ultimo_indice == indices_jogadores.size()-1:
-					ultimo_indice = 0
+					self.ultimo_indice = 0
 				else:
-					ultimo_indice += 1
+					self.ultimo_indice += 1
 			elif questao_sorteada["tema"] in id_passados:
 				if questao_sorteada["id"] not in id_passados[questao_sorteada["tema"]]:
+					var L = id_passados[questao_sorteada["tema"]]
+					L.append(questao_sorteada["id"])
+					self.id_passados[questao_sorteada["tema"]] = L
 					verificador = true
 					_process_question(questao_sorteada, ultimo_indice)
-					ultimo_indice = (ultimo_indice + 1) % indices_jogadores.size()
+					if ultimo_indice == indices_jogadores.size()-1:
+						self.ultimo_indice = 0
+					else:
+						self.ultimo_indice += 1
 				else:
 					if questoes.size() == id_passados[questao_sorteada["tema"]].size():
-						id_passados[questao_sorteada["tema"]] = []
+						self.id_passados[questao_sorteada["tema"]] = []
 	else:
 		print("Nenhuma questão encontrada para o tema:", tema)
 
@@ -82,7 +92,7 @@ func _process_question(questao_sorteada, ultimo_indice):
 
 	# Carrega e instancia a cena da carta
 	var carta_scene = preload("res://scenes/carta.tscn")
-	var carta = carta_scene.instantiate()
+	carta = carta_scene.instantiate()
 
 	if carta != null:
 		# Adiciona a carta como filho da cena atual
@@ -92,6 +102,10 @@ func _process_question(questao_sorteada, ultimo_indice):
 			# Posicione a carta, se necessário
 			carta.position = Vector2(50, 25)  # Ajuste conforme necessário
 			carta.z_index = 1  # Garante que fique acima de outros elementos
+			# **Desativa os botões do tabuleiro**
+			set_buttons_active(false)
+			# **Conecta o sinal emitido pela carta**
+			carta.connect("carta_finalizada", Callable(self, "_on_carta_finalizada"))
 		else:
 			print("Erro: Cena atual não encontrada.")
 	else:
@@ -106,8 +120,18 @@ func carregar_json(caminho: String) -> Array:
 	file.close()  # Fecha o arquivo
 	var resultado = JSON.parse_string(conteudo)
 	return resultado
-
-
+func _on_carta_finalizada() -> void:
+	# Reativa os botões do tabuleiro após o jogador confirmar na carta
+	set_buttons_active(true)
+	
+func set_buttons_active(active: bool) -> void:
+	for child in get_tree().root.get_children():
+		if child.name == "Tabuleiro":
+			var no = child
+			for filho_no in no.get_children():  # Supondo que os botões estão em um nó chamado "BotaoTabuleiro"
+				if filho_no is Button:
+					filho_no.disabled = not active
+			
 func _on_button_pressed() -> void:
 	var temas_selecionados = get_tree().root.get_meta("temas")
 	random_question(temas_selecionados,indices_jogadores, ultimo_indice)
