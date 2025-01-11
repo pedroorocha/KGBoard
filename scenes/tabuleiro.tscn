@@ -9,8 +9,8 @@ script = ExtResource("1_2p3k5")
 pawn_scene = ExtResource("2_gk4hm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(575, 323)
-scale = Vector2(1.40686, 0.852243)
+position = Vector2(576.501, 324)
+scale = Vector2(1.41054, 0.854881)
 texture = ExtResource("1_36bgs")
 
 [node name="Peoes" type="Node2D" parent="."]

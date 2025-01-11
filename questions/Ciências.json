@@ -52,11 +52,11 @@
 		"pergunta": "O que é fotossíntese?",
 		"alternativas": [
 			"Um processo de respiração celular",
-			"Um método de obtenção de energia pelos animais",
-			"Um processo pelo qual plantas produzem alimento usando luz solar",
+			"Um método de obtenção de energia",
+			"Forma pela qual as plantas produzem seu proprio alimento para produzir energia",
 			"Um fenômeno climático"
 		],
-		"resposta_correta": ["Um processo pelo qual plantas produzem alimento usando luz solar"],
+		"resposta_correta": ["Forma pela qual as plantas produzem seu proprio alimento para produzir energia"],
 		"tema": "Ciências"
 	}
 ]

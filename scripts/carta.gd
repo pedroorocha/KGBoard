@@ -13,6 +13,10 @@ signal carta_finalizada
 @onready var label_vez = $Label2
 @onready var alternativas_container = $GridContainer
 @onready var botao_confirmar = $Button
+@onready var card_sprite = $Sprite2D
+
+# Defina a largura máxima do texto para os checkboxes
+var max_text_width = 330  # Altere esse valor conforme necessário para ajustar ao tamanho do seu card
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,10 +36,31 @@ func _ready() -> void:
 		label_vez.modulate = Color(0, 0, 1)
 	elif cor == "Vez do peão Branco":
 		label_vez.modulate = Color(1, 1, 1)
+	
+	# Cria e ajusta os checkboxes
 	for alternativa in alternativas:
 		var checkbox = CheckBox.new()
 		checkbox.text = alternativa
+		ajustar_tamanho_checkbox(checkbox)  # Ajusta o tamanho do checkbox
 		alternativas_container.add_child(checkbox)
+
+# Ajustar o tamanho do texto para caber dentro do limite
+func ajustar_tamanho_checkbox(checkbox: CheckBox) -> void:
+	var font_size = 15
+	var font = checkbox.get_theme_default_font()  # Obtenha a fonte padrão do tema
+	var text = checkbox.text
+	var wrapped_text = ""
+	var line = ""
+	for word in text.split(" "):
+		var test_line = line + ("" if line == "" else " ") + word
+		if font.get_string_size(test_line).x <= max_text_width:
+			line = test_line
+		else:
+			wrapped_text += line + "\n"
+			line = word
+			checkbox.add_theme_font_size_override("font_size", font_size)
+	wrapped_text += line  # Adiciona a última linha
+	checkbox.text = wrapped_text.strip_edges()  # Define o texto ajustado
 
 # Função chamada para verificar e desmarcar checkboxes
 func check_and_uncheck() -> void:
