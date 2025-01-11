@@ -89,6 +89,7 @@ func _process_question(questao_sorteada, ultimo_indice):
 	get_tree().root.set_meta("resposta_correta", resposta_correta)
 	cor = cores[ultimo_indice]
 	get_tree().root.set_meta("cor", cor)
+	get_tree().root.set_meta("id_jogador", ultimo_indice)
 
 	# Carrega e instancia a cena da carta
 	var carta_scene = preload("res://scenes/carta.tscn")
