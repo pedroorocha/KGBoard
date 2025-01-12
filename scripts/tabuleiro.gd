@@ -2,7 +2,9 @@ extends Node2D
 # Variáveis para o tabuleiro e os peões
 @export var pawn_scene: PackedScene  # Arraste a cena "peao.tscn" para esta propriedade no editor.
 var pawn_positions = []  # Lista para armazenar posições iniciais para os peões.
+var tabuleiro_positions = []  # Posições predefinidas no tabuleiro
 var cores = ["Vermelho", "Azul", "Preto", "Branco"]
+var posicoes_peoes = {}
 var id_passados = {}
 var indices_jogadores = []
 var ultimo_indice = 0
@@ -20,6 +22,13 @@ func _ready() -> void:
 		Vector2(60, 50),
 		Vector2(70, 50)
 	]
+	#colocar as posicoes aqui
+	tabuleiro_positions = [
+		Vector2(145, 50),
+		Vector2(220, 50),
+		Vector2(290, 50),
+		Vector2(360, 50)
+	]  # Exemplo de percurso no tabuleiro
 	
 	# Chama a função para adicionar os peões (modifique conforme o número de jogadores).
 	var jogadores = get_tree().root.get_meta("jogadores")
@@ -28,6 +37,7 @@ func _ready() -> void:
 # Função para adicionar os peões ao tabuleiro
 func add_pawns(player_count: int) -> void:
 	for i in range(player_count):
+		posicoes_peoes[i] = pawn_positions[i]
 		indices_jogadores.append(i)
 		var pawn = pawn_scene.instantiate()  # Instancia a cena do peão
 		pawn.position = pawn_positions[i]  # Define a posição inicial
@@ -38,7 +48,27 @@ func add_pawns(player_count: int) -> void:
 				sprite.visible = true
 			else:
 				sprite.visible = false
+func mover_peao(jogador_id: int) -> void:
+	var pawn = $Peoes.get_child(jogador_id)  # Obter o peão correspondente
+	print(pawn.position)
+	var start_position = pawn.position
+	var next_position_index = tabuleiro_positions.find(start_position) + 1
+	if next_position_index >= tabuleiro_positions.size():
+		var tween = create_tween()
+		tween.tween_property(pawn, "position", pawn_positions[jogador_id], 1.0)
+		return
+	
+	var target_position = tabuleiro_positions[next_position_index]
+	posicoes_peoes[jogador_id] = target_position  # Atualiza a posição no dicionário
+	# Cria e configura o Tween
+	var tween = create_tween()
+	tween.tween_property(pawn, "position", target_position, 1.0)
 
+
+# Responder ao sinal "jogador_acertou"
+func _on_jogador_acertou(jogador_id: int) -> void:
+	print("Jogador acertou! Movendo peão:", jogador_id)
+	mover_peao(jogador_id)
 #Função para sortear uma questão
 func random_question(temas, indices_jogadores, ultimo_indice) -> void:
 	var tamanho_vetor = temas.size() - 1
@@ -106,13 +136,12 @@ func _process_question(questao_sorteada, ultimo_indice):
 			# **Desativa os botões do tabuleiro**
 			set_buttons_active(false)
 			# **Conecta o sinal emitido pela carta**
+			carta.connect("jogador_acertou", Callable(self, "_on_jogador_acertou"))
 			carta.connect("carta_finalizada", Callable(self, "_on_carta_finalizada"))
 		else:
 			print("Erro: Cena atual não encontrada.")
 	else:
 		print("Erro: Não foi possível instanciar a carta.")
-func mover_peao(indices_jogadores, ultimo_indice) -> void:
-	pass
 	
 func carregar_json(caminho: String) -> Array:
 	# Abre o arquivo JSON
