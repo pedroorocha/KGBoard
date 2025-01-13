@@ -4,6 +4,7 @@ extends Node2D
 var pergunta = ""
 var alternativas = []
 var resposta_correta = []
+var forma_geometrica = ""
 var cor = "Vez do peão "
 #1 se tiver acertado
 var is_correct = 0
@@ -27,6 +28,7 @@ func _ready() -> void:
 	resposta_correta = get_tree().root.get_meta("resposta_correta")
 	cor += get_tree().root.get_meta("cor")
 	jogador_id = get_tree().root.get_meta("id_jogador")
+	forma_geometrica = get_tree().root.get_meta("forma_geometrica")
 	# Configura os elementos da carta
 	label_pergunta.text = pergunta  # Define o texto da pergunta
 	label_vez.text = cor
@@ -96,7 +98,7 @@ func _on_button_pressed() -> void:
 				if resposta_final.strip_edges() == alternativa_correta:
 					print("Jogador acertou!")
 					print(jogador_id)
-					emit_signal("jogador_acertou", jogador_id)  # Emitir um sinal, por exemplo
+					emit_signal("jogador_acertou", jogador_id, forma_geometrica)  # Emitir um sinal, por exemplo
 					emit_signal("carta_finalizada")
 					queue_free()
 					is_correct = 1

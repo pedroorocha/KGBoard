@@ -3,6 +3,7 @@ extends Node2D
 @export var pawn_scene: PackedScene  # Arraste a cena "peao.tscn" para esta propriedade no editor.
 var pawn_positions = []  # Lista para armazenar posições iniciais para os peões.
 var tabuleiro_positions = []  # Posições predefinidas no tabuleiro
+var forma_geometrica_associada = []
 var cores = ["Vermelho", "Azul", "Preto", "Branco"]
 var posicoes_peoes = {}
 var id_passados = {}
@@ -28,6 +29,9 @@ func _ready() -> void:
 		Vector2(220, 50),
 		Vector2(290, 50),
 		Vector2(360, 50)
+	]
+	forma_geometrica_associada = [
+		"triângulo", "losango", "quadrado", "círculo"
 	]  # Exemplo de percurso no tabuleiro
 	
 	# Chama a função para adicionar os peões (modifique conforme o número de jogadores).
@@ -48,10 +52,14 @@ func add_pawns(player_count: int) -> void:
 				sprite.visible = true
 			else:
 				sprite.visible = false
-func mover_peao_frente(jogador_id: int) -> void:
+func mover_peao_frente(jogador_id: int, forma_geométrica: String) -> void:
 	var pawn = $Peoes.get_child(jogador_id)  # Obter o peão correspondente
-	print(pawn.position)
+	var indice_forma_geometrica = 0
+	print(forma_geométrica)
 	var start_position = pawn.position
+	if forma_geometrica_associada.find(start_position) > -1:
+		indice_forma_geometrica = forma_geometrica_associada.find(start_position)
+	print(forma_geometrica_associada[indice_forma_geometrica])
 	var next_position_index = tabuleiro_positions.find(start_position) + 1
 	if next_position_index >= tabuleiro_positions.size():
 		print("Jogador Ganhou!", jogador_id)
@@ -83,9 +91,9 @@ func mover_peao_atras(jogador_id: int) -> void:
 
 
 # Responder ao sinal "jogador_acertou"
-func _on_jogador_acertou(jogador_id: int) -> void:
+func _on_jogador_acertou(jogador_id: int, forma_geometrica: String) -> void:
 	print("Jogador acertou! Movendo peão:", jogador_id)
-	mover_peao_frente(jogador_id)
+	mover_peao_frente(jogador_id, forma_geometrica)
 
 func _on_jogador_errou(jogador_id: int) -> void:
 	print("Jogador errou! Movendo peão:", jogador_id)
@@ -141,7 +149,8 @@ func _process_question(questao_sorteada, ultimo_indice):
 	cor = cores[ultimo_indice]
 	get_tree().root.set_meta("cor", cor)
 	get_tree().root.set_meta("id_jogador", ultimo_indice)
-
+	var forma_geometrica = questao_sorteada["forma_geometrica"]
+	get_tree().root.set_meta("forma_geometrica", forma_geometrica)
 	# Carrega e instancia a cena da carta
 	var carta_scene = preload("res://scenes/carta.tscn")
 	carta = carta_scene.instantiate()
