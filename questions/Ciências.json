@@ -9,7 +9,8 @@
 			"Marte"
 		],
 		"resposta_correta": ["Mercúrio"],
-		"tema": "Ciências"
+		"tema": "Ciências",
+		"forma_geometrica": "triângulo"
 	},
 	{
 		"id": 2,
@@ -21,7 +22,8 @@
 			"Tecido"
 		],
 		"resposta_correta": ["Célula"],
-		"tema": "Ciências"
+		"tema": "Ciências",
+		"forma_geometrica": "quadrado"
 	},
 	{
 		"id": 3,
@@ -33,7 +35,8 @@
 			"Hidrogênio"
 		],
 		"resposta_correta": ["Oxigênio"],
-		"tema": "Ciências"
+		"tema": "Ciências",
+		"forma_geometrica": "losango"
 	},
 	{
 		"id": 4,
@@ -45,7 +48,8 @@
 			"Pulmão"
 		],
 		"resposta_correta": ["Pele"],
-		"tema": "Ciências"
+		"tema": "Ciências",
+		"forma_geometrica": "círculo"
 	},
 	{
 		"id": 5,
@@ -57,6 +61,7 @@
 			"Um fenômeno climático"
 		],
 		"resposta_correta": ["Forma pela qual as plantas produzem seu proprio alimento para produzir energia"],
-		"tema": "Ciências"
+		"tema": "Ciências",
+		"forma_geometrica": "retângulo"
 	}
 ]

@@ -9,7 +9,8 @@
 			"Fundação de Roma"
 		],
 		"resposta_correta": ["Queda do Império Romano do Ocidente"],
-		"tema": "História"
+		"tema": "História",
+		"forma_geometrica": "triângulo"
 	},
 	{
 		"id": 2,
@@ -21,7 +22,8 @@
 			"Frederico, o Grande"
 		],
 		"resposta_correta": ["Otto von Bismarck"],
-		"tema": "História"
+		"tema": "História",
+		"forma_geometrica": "quadrado"
 	},
 	{
 		"id": 3,
@@ -33,7 +35,8 @@
 			"Olmecas"
 		],
 		"resposta_correta": ["Incas"],
-		"tema": "História"
+		"tema": "História",
+		"forma_geometrica": "losango"
 	},
 	{
 		"id": 4,
@@ -45,7 +48,8 @@
 			"Tratado de Viena"
 		],
 		"resposta_correta": ["Tratado de Versalhes"],
-		"tema": "História"
+		"tema": "História",
+		"forma_geometrica": "círculo"
 	},
 	{
 		"id": 5,
@@ -57,6 +61,7 @@
 			"Theodore Roosevelt"
 		],
 		"resposta_correta": ["George Washington"],
-		"tema": "História"
+		"tema": "História",
+		"forma_geometrica": "retângulo"
 	}
 ]

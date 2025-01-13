@@ -48,12 +48,29 @@ func add_pawns(player_count: int) -> void:
 				sprite.visible = true
 			else:
 				sprite.visible = false
-func mover_peao(jogador_id: int) -> void:
+func mover_peao_frente(jogador_id: int) -> void:
 	var pawn = $Peoes.get_child(jogador_id)  # Obter o peão correspondente
 	print(pawn.position)
 	var start_position = pawn.position
 	var next_position_index = tabuleiro_positions.find(start_position) + 1
 	if next_position_index >= tabuleiro_positions.size():
+		print("Jogador Ganhou!", jogador_id)
+		var tween = create_tween()
+		tween.tween_property(pawn, "position", pawn_positions[jogador_id], 1.0)
+		return
+	
+	var target_position = tabuleiro_positions[next_position_index]
+	posicoes_peoes[jogador_id] = target_position  # Atualiza a posição no dicionário
+	# Cria e configura o Tween
+	var tween = create_tween()
+	tween.tween_property(pawn, "position", target_position, 1.0)
+	
+func mover_peao_atras(jogador_id: int) -> void:
+	var pawn = $Peoes.get_child(jogador_id)  # Obter o peão correspondente
+	print(pawn.position)
+	var start_position = pawn.position
+	var next_position_index = tabuleiro_positions.find(start_position) - 1
+	if next_position_index < 0:
 		var tween = create_tween()
 		tween.tween_property(pawn, "position", pawn_positions[jogador_id], 1.0)
 		return
@@ -68,7 +85,11 @@ func mover_peao(jogador_id: int) -> void:
 # Responder ao sinal "jogador_acertou"
 func _on_jogador_acertou(jogador_id: int) -> void:
 	print("Jogador acertou! Movendo peão:", jogador_id)
-	mover_peao(jogador_id)
+	mover_peao_frente(jogador_id)
+
+func _on_jogador_errou(jogador_id: int) -> void:
+	print("Jogador errou! Movendo peão:", jogador_id)
+	mover_peao_atras(jogador_id)
 #Função para sortear uma questão
 func random_question(temas, indices_jogadores, ultimo_indice) -> void:
 	var tamanho_vetor = temas.size() - 1
@@ -137,6 +158,7 @@ func _process_question(questao_sorteada, ultimo_indice):
 			set_buttons_active(false)
 			# **Conecta o sinal emitido pela carta**
 			carta.connect("jogador_acertou", Callable(self, "_on_jogador_acertou"))
+			carta.connect("jogador_errou", Callable(self, "_on_jogador_errou"))
 			carta.connect("carta_finalizada", Callable(self, "_on_carta_finalizada"))
 		else:
 			print("Erro: Cena atual não encontrada.")
