@@ -1,25 +1,33 @@
 [gd_scene load_steps=4 format=3 uid="uid://bt3g2g70h2ldu"]
 
 [ext_resource type="Script" path="res://scripts/tabuleiro.gd" id="1_2p3k5"]
-[ext_resource type="Texture2D" uid="uid://dhacn204sks2t" path="res://sprites/Captura de tela de 2025-01-07 16-14-39.png" id="1_36bgs"]
 [ext_resource type="PackedScene" uid="uid://bkxsy8jgmuqpd" path="res://scenes/peao.tscn" id="2_gk4hm"]
+[ext_resource type="Texture2D" uid="uid://vstxtrxi4u31" path="res://sprites/Captura de tela de 2025-01-14 09-59-23.png" id="3_qkplo"]
 
 [node name="Tabuleiro" type="Node2D"]
 script = ExtResource("1_2p3k5")
 pawn_scene = ExtResource("2_gk4hm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576.501, 324)
-scale = Vector2(1.41054, 0.854881)
-texture = ExtResource("1_36bgs")
+position = Vector2(575, 323.5)
+scale = Vector2(1.59722, 1.59259)
+texture = ExtResource("3_qkplo")
 
 [node name="Peoes" type="Node2D" parent="."]
 
 [node name="Button" type="Button" parent="."]
-offset_left = 505.0
-offset_top = 259.0
-offset_right = 628.0
-offset_bottom = 319.0
-text = "Iniciar Rodada"
+offset_left = 389.0
+offset_top = 278.0
+offset_right = 541.0
+offset_bottom = 338.0
+text = "Iniciar Rodada (1x)"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 572.0
+offset_top = 281.0
+offset_right = 711.0
+offset_bottom = 336.0
+text = "Iniciar Rodada (2x)"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

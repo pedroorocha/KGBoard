@@ -105,7 +105,7 @@ func _on_button_pressed() -> void:
 					get_tree().root.set_meta("is_correct", is_correct)
 					return 
 	print("Jogador errou!")
-	emit_signal("jogador_errou", jogador_id)  # Emitir um sinal, por exemplo
+	emit_signal("jogador_errou", jogador_id, forma_geometrica)  # Emitir um sinal, por exemplo
 	emit_signal("carta_finalizada")
 	queue_free()
 	get_tree().root.set_meta("is_correct", is_correct)

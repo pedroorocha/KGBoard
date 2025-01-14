@@ -16,6 +16,7 @@ var cor = ""
 var carta = null
 const Position = preload("res://scripts/posicao.gd")
 var posicoes = []
+@export var botao_2x: bool = false
 func _ready() -> void:
 	# Defina as posições iniciais dos peões no tabuleiro.
 	# Ajuste estas coordenadas com base no layout do tabuleiro.
@@ -23,17 +24,17 @@ func _ready() -> void:
 	posicoes = carregar_positions(file_path)
 	
 	pawn_positions = [
-		Vector2(40, 50),
-		Vector2(50, 50),
-		Vector2(60, 50),
-		Vector2(70, 50)
+		Vector2(40, 70),
+		Vector2(50, 70),
+		Vector2(60, 70),
+		Vector2(70, 70)
 	]
 	#colocar as posicoes aqui
 	tabuleiro_positions = [
-		Vector2(145, 50),
-		Vector2(220, 50),
-		Vector2(290, 50),
-		Vector2(360, 50)
+		Vector2(145, 70),
+		Vector2(220, 70),
+		Vector2(290, 70),
+		Vector2(360, 70)
 	]
 	forma_geometrica_associada = [
 		"triângulo", "losango", "quadrado", "círculo"
@@ -77,52 +78,102 @@ func carregar_positions(file_path: String) -> Array:
 	else:
 		print("Erro ao abrir o arquivo:", file_path)
 	return positions
-func mover_peao_frente(jogador_id: int, forma_geométrica: String) -> void:
+func mover_peao_frente(jogador_id: int, forma_geometrica: String) -> void:
 	var pawn = $Peoes.get_child(jogador_id)  # Obter o peão correspondente
 	var indice_forma_geometrica = 0
-	print(forma_geométrica)
 	var start_position = pawn.position
-	if forma_geometrica_associada.find(start_position) > -1:
-		indice_forma_geometrica = forma_geometrica_associada.find(start_position)
-	print(forma_geometrica_associada[indice_forma_geometrica])
-	var next_position_index = tabuleiro_positions.find(start_position) + 1
-	if next_position_index >= tabuleiro_positions.size():
-		print("Jogador Ganhou!", jogador_id)
-		var tween = create_tween()
-		tween.tween_property(pawn, "position", pawn_positions[jogador_id], 1.0)
-		return
-	
-	var target_position = tabuleiro_positions[next_position_index]
-	posicoes_peoes[jogador_id] = target_position  # Atualiza a posição no dicionário
-	# Cria e configura o Tween
+	if pawn_positions.find(start_position) != -1 and self.botao_2x==false:
+		for position in posicoes:
+			if position.forma_geometrica == forma_geometrica:
+				print(position.get_position())
+				var tween = create_tween()
+				tween.tween_property(pawn, "position", position.pos, 1.0)
+				return
+	elif pawn_positions.find(start_position) == -1 and self.botao_2x==false:
+		var encontrou_pos = false
+		for position in posicoes:
+			if encontrou_pos == true and position.forma_geometrica == forma_geometrica:
+				print(position.get_position())
+				var tween = create_tween()
+				tween.tween_property(pawn, "position", position.pos, 1.0)
+				return
+			if encontrou_pos == false and position.pos == start_position:
+				encontrou_pos = true
+	if self.botao_2x==true:
+		if pawn_positions.find(start_position) != -1:
+			var primeira_ocorrencia = false
+			for position in posicoes:
+				if position.forma_geometrica == forma_geometrica and primeira_ocorrencia == true:
+					print(position.get_position())
+					var tween = create_tween()
+					tween.tween_property(pawn, "position", position.pos, 1.0)
+					self.botao_2x=false
+					return
+				if position.forma_geometrica == forma_geometrica and primeira_ocorrencia == false:
+					primeira_ocorrencia=true
+		else:
+			var encontrou_pos = false
+			var primeira_ocorrencia = false
+			for position in posicoes:
+				if encontrou_pos == true and position.forma_geometrica == forma_geometrica and primeira_ocorrencia == true:
+					print(position.get_position())
+					var tween = create_tween()
+					tween.tween_property(pawn, "position", position.pos, 1.0)
+					self.botao_2x = false
+					return
+				if encontrou_pos == true and position.pos == start_position:
+					primeira_ocorrencia = true
+				if encontrou_pos == false and position.pos == start_position:
+					encontrou_pos = true
+	#Se passou nos if é porque chegou no final
 	var tween = create_tween()
-	tween.tween_property(pawn, "position", target_position, 1.0)
+	tween.tween_property(pawn, "position", pawn_positions[jogador_id], 1.0)
+	print("Jogador Ganhou! ", jogador_id)
+	self.botao_2x = false
 	
-func mover_peao_atras(jogador_id: int) -> void:
+func mover_peao_atras(jogador_id: int, forma_geometrica) -> void:
 	var pawn = $Peoes.get_child(jogador_id)  # Obter o peão correspondente
 	print(pawn.position)
 	var start_position = pawn.position
 	var next_position_index = tabuleiro_positions.find(start_position) - 1
-	if next_position_index < 0:
-		var tween = create_tween()
-		tween.tween_property(pawn, "position", pawn_positions[jogador_id], 1.0)
-		return
-	
-	var target_position = tabuleiro_positions[next_position_index]
-	posicoes_peoes[jogador_id] = target_position  # Atualiza a posição no dicionário
-	# Cria e configura o Tween
+	var posicoes_invertidas = posicoes.duplicate()
+	posicoes_invertidas.reverse()
+	var encontrou_pos = false
+	if botao_2x == false:
+		for position in posicoes_invertidas:
+			if encontrou_pos == true and position.forma_geometrica == forma_geometrica:
+				print(position.get_position())
+				var tween = create_tween()
+				tween.tween_property(pawn, "position", position.pos, 1.0)
+				return
+			if encontrou_pos == false and position.pos == start_position:
+				encontrou_pos = true
+	else:
+		var primeira_ocorrencia = false
+		for position in posicoes_invertidas:
+			if encontrou_pos == true and position.forma_geometrica == forma_geometrica and primeira_ocorrencia == true:
+				print(position.get_position())
+				var tween = create_tween()
+				tween.tween_property(pawn, "position", position.pos, 1.0)
+				self.botao_2x=false
+				return
+			if encontrou_pos == true and position.forma_geometrica == forma_geometrica and primeira_ocorrencia == false:
+				primeira_ocorrencia = true
+			if encontrou_pos == false and position.pos == start_position:
+				encontrou_pos = true
+	#Se passou nos if é porque ele volta para a primeira posição
 	var tween = create_tween()
-	tween.tween_property(pawn, "position", target_position, 1.0)
-
-
+	tween.tween_property(pawn, "position", pawn_positions[jogador_id], 1.0)
+	print("Jogador Voltou para o ínicio: ", jogador_id)
+	self.botao_2x = false
 # Responder ao sinal "jogador_acertou"
 func _on_jogador_acertou(jogador_id: int, forma_geometrica: String) -> void:
 	print("Jogador acertou! Movendo peão:", jogador_id)
 	mover_peao_frente(jogador_id, forma_geometrica)
 
-func _on_jogador_errou(jogador_id: int) -> void:
+func _on_jogador_errou(jogador_id: int, forma_geometrica) -> void:
 	print("Jogador errou! Movendo peão:", jogador_id)
-	mover_peao_atras(jogador_id)
+	mover_peao_atras(jogador_id, forma_geometrica)
 #Função para sortear uma questão
 func random_question(temas, indices_jogadores, ultimo_indice) -> void:
 	var tamanho_vetor = temas.size() - 1
@@ -219,6 +270,13 @@ func set_buttons_active(active: bool) -> void:
 					filho_no.disabled = not active
 			
 func _on_button_pressed() -> void:
+	var temas_selecionados = get_tree().root.get_meta("temas")
+	random_question(temas_selecionados,indices_jogadores, ultimo_indice)
+	pass # Replace with function body.
+
+
+func _on_button_2_pressed() -> void:
+	self.botao_2x = true
 	var temas_selecionados = get_tree().root.get_meta("temas")
 	random_question(temas_selecionados,indices_jogadores, ultimo_indice)
 	pass # Replace with function body.
