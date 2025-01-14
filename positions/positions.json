@@ -1,0 +1,18 @@
+[
+	{
+		"pos": [145, 50],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [220, 50],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [290, 50],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [360, 50],
+		"forma_geometrica": "círculo"
+	}
+]

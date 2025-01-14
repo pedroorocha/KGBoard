@@ -14,9 +14,14 @@ var alternativas = []
 var resposta_correta = []
 var cor = ""
 var carta = null
+const Position = preload("res://scripts/posicao.gd")
+var posicoes = []
 func _ready() -> void:
 	# Defina as posições iniciais dos peões no tabuleiro.
 	# Ajuste estas coordenadas com base no layout do tabuleiro.
+	var file_path = "res://positions/positions.json"
+	posicoes = carregar_positions(file_path)
+	
 	pawn_positions = [
 		Vector2(40, 50),
 		Vector2(50, 50),
@@ -37,6 +42,8 @@ func _ready() -> void:
 	# Chama a função para adicionar os peões (modifique conforme o número de jogadores).
 	var jogadores = get_tree().root.get_meta("jogadores")
 	add_pawns(jogadores)
+	for position in posicoes:
+		print(position.get_position())
 
 # Função para adicionar os peões ao tabuleiro
 func add_pawns(player_count: int) -> void:
@@ -52,6 +59,24 @@ func add_pawns(player_count: int) -> void:
 				sprite.visible = true
 			else:
 				sprite.visible = false
+func carregar_positions(file_path: String) -> Array:
+	var positions = []
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file:
+		var data = file.get_as_text()
+		var parsed_data = JSON.parse_string(data)
+		if typeof(parsed_data) == TYPE_ARRAY:
+			for item in parsed_data:
+				var vector_pos = Vector2(item["pos"][0], item["pos"][1])
+				var forma = item["forma_geometrica"]
+				var position = Position.new(vector_pos, forma)
+				positions.append(position)
+		else:
+			print("Erro ao parsear JSON:", parsed_data.error_string)
+		file.close()
+	else:
+		print("Erro ao abrir o arquivo:", file_path)
+	return positions
 func mover_peao_frente(jogador_id: int, forma_geométrica: String) -> void:
 	var pawn = $Peoes.get_child(jogador_id)  # Obter o peão correspondente
 	var indice_forma_geometrica = 0
