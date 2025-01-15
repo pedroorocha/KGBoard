@@ -115,13 +115,14 @@ func mover_peao_frente(jogador_id: int, forma_geometrica: String) -> void:
 			var encontrou_pos = false
 			var primeira_ocorrencia = false
 			for position in posicoes:
+				print(position.get_position())
 				if encontrou_pos == true and position.forma_geometrica == forma_geometrica and primeira_ocorrencia == true:
 					print(position.get_position())
 					var tween = create_tween()
 					tween.tween_property(pawn, "position", position.pos, 1.0)
 					self.botao_2x = false
 					return
-				if encontrou_pos == true and position.pos == start_position:
+				if encontrou_pos == true and position.forma_geometrica == forma_geometrica and primeira_ocorrencia == false:
 					primeira_ocorrencia = true
 				if encontrou_pos == false and position.pos == start_position:
 					encontrou_pos = true

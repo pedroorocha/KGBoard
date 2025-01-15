@@ -1,18 +1,18 @@
 [
 	{
-		"pos": [145, 70],
+		"pos": [150, 70],
 		"forma_geometrica": "círculo"
 	},
 	{
-		"pos": [220, 70],
+		"pos": [205, 70],
 		"forma_geometrica": "triângulo"
 	},
 	{
-		"pos": [290, 70],
+		"pos": [260, 70],
 		"forma_geometrica": "quadrado"
 	},
 	{
-		"pos": [320, 70],
+		"pos": [315, 70],
 		"forma_geometrica": "losango"
 	},
 	{
@@ -20,7 +20,55 @@
 		"forma_geometrica": "círculo"
 	},
 	{
-		"pos": [430, 70],
+		"pos": [425, 70],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [480, 70],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [535, 70],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [590, 70],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [645, 70],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [700, 70],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [755, 70],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [810, 70],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [865, 70],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [920, 70],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [975, 70],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [1030, 70],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [1085, 70],
 		"forma_geometrica": "triângulo"
 	}
 ]
