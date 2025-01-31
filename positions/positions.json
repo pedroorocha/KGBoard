@@ -70,5 +70,273 @@
 	{
 		"pos": [1085, 70],
 		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [1090, 115],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [1090, 165],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [1090, 215],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [1090, 265],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [1090, 315],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [1090, 365],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [1090, 415],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [1090, 465],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [1090, 515],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [1090, 562],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [1037, 562],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [984, 562],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [930, 562],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [878, 562],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [826, 562],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [773, 562],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [720, 562],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [668, 562],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [616, 562],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [563, 562],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [508, 562],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [456, 562],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [405, 562],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [352, 562],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [298, 562],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [246, 562],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [198, 562],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [146, 562],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [92, 562],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [92, 508],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [92, 450],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [92, 398],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [150, 396],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [201, 396],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [259, 396],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [317, 396],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [376, 396],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [426, 396],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [482, 394],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [540, 394],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [598, 394],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [648, 394],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [705, 391],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [763, 391],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [820, 391],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [872, 391],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [928, 391],
+		"forma_geometrica": "círculo"
+	},
+	{
+		"pos": [975, 391],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [978, 338],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [978, 284],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [978, 232],
+		"forma_geometrica": "circulo"
+	},
+	{
+		"pos": [926, 236],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [872, 231],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [820, 231],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [770, 231],
+		"forma_geometrica": "circulo"
+	},
+	{
+		"pos": [716, 231],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [663, 231],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [610, 231],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [559, 231],
+		"forma_geometrica": "circulo"
+	},
+	{
+		"pos": [505, 231],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [450,231],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [400,231],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [353, 231],
+		"forma_geometrica": "circulo"
+	},
+	{
+		"pos": [299, 231],
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"pos": [246, 231],
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"pos": [192, 231],
+		"forma_geometrica": "losango"
+	},
+	{
+		"pos": [139,231],
+		"forma_geometrica": "circulo"
 	}
 ]
