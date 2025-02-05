@@ -43,6 +43,7 @@ func _ready() -> void:
 	# Chama a função para adicionar os peões (modifique conforme o número de jogadores).
 	var jogadores = get_tree().root.get_meta("jogadores")
 	add_pawns(jogadores)
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)  # Impede maximização
 	for position in posicoes:
 		print(position.get_position())
 

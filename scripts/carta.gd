@@ -48,6 +48,7 @@ func _ready() -> void:
 		checkbox.text = alternativa
 		ajustar_tamanho_checkbox(checkbox)  # Ajusta o tamanho do checkbox
 		alternativas_container.add_child(checkbox)
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)  # Impede maximização
 
 # Ajustar o tamanho do texto para caber dentro do limite
 func ajustar_tamanho_checkbox(checkbox: CheckBox) -> void:

@@ -11,6 +11,7 @@ func _ready() -> void:
 		var checkbox = CheckBox.new()
 		checkbox.text = tema
 		container.add_child(checkbox)
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)  # Impede maximização
 	pass # Replace with function body.
 
 
