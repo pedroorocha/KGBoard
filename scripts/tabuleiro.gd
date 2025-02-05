@@ -128,7 +128,7 @@ func mover_peao_frente(jogador_id: int, forma_geometrica: String) -> void:
 					encontrou_pos = true
 	#Se passou nos if é porque chegou no final
 	var tween = create_tween()
-	tween.tween_property(pawn, "position", pawn_positions[jogador_id], 1.0)
+	tween.tween_property(pawn, "position", Vector2(65,225), 1.0)
 	print("Jogador Ganhou! ", jogador_id)
 	self.botao_2x = false
 	

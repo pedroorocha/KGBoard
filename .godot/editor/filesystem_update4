@@ -1,4 +1,4 @@
-res://scenes/tabuleiro.tscn
-res://positions/positions.json
 res://scenes/menu_principal.tscn
 res://scenes/peao.tscn
+res://scenes/tabuleiro.tscn
+res://scripts/tabuleiro.gd
