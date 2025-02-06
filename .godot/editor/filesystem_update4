@@ -2,4 +2,4 @@ res://scenes/menu_principal.tscn
 res://scenes/peao.tscn
 res://scenes/tabuleiro.tscn
 res://scenes/timer.tscn
-res://scripts/CountDown_Timer.gd
+res://scripts/tabuleiro.gd

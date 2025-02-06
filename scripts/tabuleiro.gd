@@ -14,6 +14,7 @@ var alternativas = []
 var resposta_correta = []
 var cor = ""
 var carta = null
+var timer = null
 const Position = preload("res://scripts/posicao.gd")
 var posicoes = []
 @export var botao_2x: bool = false
@@ -231,11 +232,13 @@ func _process_question(questao_sorteada, ultimo_indice):
 	# Carrega e instancia a cena da carta
 	var carta_scene = preload("res://scenes/carta.tscn")
 	carta = carta_scene.instantiate()
-
+	var timer_scene = preload("res://scenes/timer.tscn")
+	timer = timer_scene.instantiate()
 	if carta != null:
 		# Adiciona a carta como filho da cena atual
 		var current_scene = get_tree().current_scene
 		if current_scene != null:
+			current_scene.add_child(timer)
 			current_scene.add_child(carta)
 			# Posicione a carta, se necessário
 			carta.position = Vector2(50, 25)  # Ajuste conforme necessário
