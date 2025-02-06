@@ -3,3 +3,5 @@ res://scenes/peao.tscn
 res://scenes/tabuleiro.tscn
 res://scenes/timer.tscn
 res://scripts/CountDown_Timer.gd
+res://scripts/carta.gd
+res://scenes/carta.tscn
