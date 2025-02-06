@@ -17,7 +17,9 @@ func _on_timer_timeout():
 	time_left -= 1
 	if time_left <= 0:
 		timer.stop()
-	update_label()
+		$Label.text = "Perdeu a vez"  # Exibe a mensagem quando o tempo acabar
+	else:
+		update_label()  # Atualiza o label com o tempo restante
 
 func update_label():
 	var minutes = floor(time_left / 60)
