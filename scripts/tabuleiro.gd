@@ -219,6 +219,7 @@ func random_question(temas, indices_jogadores, ultimo_indice) -> void:
 
 func _process_question(questao_sorteada, ultimo_indice):
 	# Processa a questão e define as propriedades no nó root
+	var tempo_acabou = false
 	pergunta = questao_sorteada["pergunta"]
 	get_tree().root.set_meta("pergunta", pergunta)
 	alternativas = questao_sorteada["alternativas"]
@@ -247,6 +248,8 @@ func _process_question(questao_sorteada, ultimo_indice):
 			# **Desativa os botões do tabuleiro**
 			set_buttons_active(false)
 			# **Conecta o sinal emitido pela carta**
+			timer.connect("tempo_acabou", Callable(self, "_on_jogador_errou"))
+			timer.connect("finalizar_carta", Callable(self, "_on_carta_finalizada"))
 			carta.connect("jogador_acertou", Callable(self, "_on_jogador_acertou"))
 			carta.connect("jogador_errou", Callable(self, "_on_jogador_errou"))
 			carta.connect("carta_finalizada", Callable(self, "_on_carta_finalizada"))
@@ -265,6 +268,8 @@ func carregar_json(caminho: String) -> Array:
 func _on_carta_finalizada() -> void:
 	# Reativa os botões do tabuleiro após o jogador confirmar na carta
 	set_buttons_active(true)
+	timer.queue_free()
+	carta.queue_free()
 	
 func set_buttons_active(active: bool) -> void:
 	for child in get_tree().root.get_children():
@@ -285,3 +290,4 @@ func _on_button_2_pressed() -> void:
 	var temas_selecionados = get_tree().root.get_meta("temas")
 	random_question(temas_selecionados,indices_jogadores, ultimo_indice)
 	pass # Replace with function body.
+	
