@@ -9,7 +9,7 @@
 			"Animado"
 		],
 		"resposta_correta": ["Triste"],
-		"tema": "História",
+		"tema": "Português",
 		"forma_geometrica": "circulo"
 	},
 	{
@@ -22,7 +22,7 @@
 			"Livro"
 		],
 		"resposta_correta": ["Triste"],
-		"tema": "História",
+		"tema": "Português",
 		"forma_geometrica": "losango"
 	},
 	{
@@ -35,7 +35,7 @@
 			"Excesão"
 		],
 		"resposta_correta": ["Exceção"],
-		"tema": "História",
+		"tema": "Português",
 		"forma_geometrica": "triângulo"
 	},
 	{
@@ -48,7 +48,7 @@
 			"Eu quero mas bolo, mas já estou cheio"
 		],
 		"resposta_correta": ["Eu quero mais bolo, mas já estou cheio"],
-		"tema": "História",
+		"tema": "Português",
 		"forma_geometrica": "quadrado"
 	},
 	{
@@ -61,7 +61,7 @@
 			"Correr"
 		],
 		"resposta_correta": ["Brasil"],
-		"tema": "História",
+		"tema": "Português",
 		"forma_geometrica": "circulo"
 	},
 	{
@@ -74,7 +74,7 @@
 			"30"
 		],
 		"resposta_correta": ["26"],
-		"tema": "História",
+		"tema": "Português",
 		"forma_geometrica": "triângulo"
 	},
 	{
@@ -87,7 +87,7 @@
 			"Uma palavra que imita um som30"
 		],
 		"resposta_correta": ["Uma repetição de sons no final das palavras"],
-		"tema": "História",
+		"tema": "Português",
 		"forma_geometrica": "quadrado"
 	},
 	{
@@ -100,7 +100,7 @@
 			"Cãois"
 		],
 		"resposta_correta": ["Cães"],
-		"tema": "História",
+		"tema": "Português",
 		"forma_geometrica": "losango"
 	}
 ]

@@ -9,7 +9,7 @@
 			"14"
 		],
 		"resposta_correta": ["10"],
-		"tema": "História",
+		"tema": "Lógica",
 		"forma_geometrica": "triângulo"
 	},
 	{
@@ -22,7 +22,7 @@
 			"🟢"
 		],
 		"resposta_correta": ["🔴"],
-		"tema": "História",
+		"tema": "Lógica",
 		"forma_geometrica": "losango"
 	},
 	{
@@ -35,8 +35,8 @@
 			"Cinza"
 		],
 		"resposta_correta": ["Preto"],
-		"tema": "História",
-		"forma_geometrica": "circulos"
+		"tema": "Lógica",
+		"forma_geometrica": "circulo"
 	},
 	{
 		"id": 4,
@@ -48,7 +48,7 @@
 			"Uma caixa"
 		],
 		"resposta_correta": ["Um buraco"],
-		"tema": "História",
+		"tema": "Lógica",
 		"forma_geometrica": "losango"
 	},
 	{
@@ -61,7 +61,7 @@
 			"Um carro"
 		],
 		"resposta_correta": ["Um piano"],
-		"tema": "História",
+		"tema": "Lógica",
 		"forma_geometrica": "circulo"
 	},
 	{
@@ -74,7 +74,7 @@
 			"O vento"
 		],
 		"resposta_correta": ["O futuro"],
-		"tema": "História",
+		"tema": "Lógica",
 		"forma_geometrica": "quadrado"
 	}
 ]

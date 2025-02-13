@@ -9,7 +9,7 @@
 			"Criar jogos novos"
 		],
 		"resposta_correta": ["Verificar se um programa funciona direitinho"],
-		"tema": "História",
+		"tema": "Teste de Software",
 		"forma_geometrica": "circulo"
 	},
 	{
@@ -22,7 +22,7 @@
 			"Para apagá-lo"
 		],
 		"resposta_correta": ["Para encontrar erros e consertá-los"],
-		"tema": "História",
+		"tema": "Teste de Software",
 		"forma_geometrica": "quadrado"
 	},
 	{
@@ -35,7 +35,7 @@
 			"Um tipo de computador"
 		],
 		"resposta_correta": ["Um erro que faz o programa não funcionar direito"],
-		"tema": "História",
+		"tema": "Teste de Software",
 		"forma_geometrica": "losango"
 	}
 ]
