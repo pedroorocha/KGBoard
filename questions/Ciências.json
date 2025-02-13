@@ -23,7 +23,7 @@
 		],
 		"resposta_correta": ["Célula"],
 		"tema": "Ciências",
-		"forma_geometrica": "circulo"
+		"forma_geometrica": "círculo"
 	},
 	{
 		"id": 3,
@@ -101,7 +101,7 @@
 		],
 		"resposta_correta": ["A Terra gira em torno do seu próprio eixo"],
 		"tema": "Ciências",
-		"forma_geometrica": "circulo"
+		"forma_geometrica": "círculo"
 	},
 	{
 		"id": 9,

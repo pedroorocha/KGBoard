@@ -10,7 +10,7 @@
 		],
 		"resposta_correta": ["Triste"],
 		"tema": "Português",
-		"forma_geometrica": "circulo"
+		"forma_geometrica": "círculo"
 	},
 	{
 		"id": 2,
@@ -21,7 +21,7 @@
 			"Azul",
 			"Livro"
 		],
-		"resposta_correta": ["Triste"],
+		"resposta_correta": ["Correr"],
 		"tema": "Português",
 		"forma_geometrica": "losango"
 	},
@@ -62,7 +62,7 @@
 		],
 		"resposta_correta": ["Brasil"],
 		"tema": "Português",
-		"forma_geometrica": "circulo"
+		"forma_geometrica": "círculo"
 	},
 	{
 		"id": 6,

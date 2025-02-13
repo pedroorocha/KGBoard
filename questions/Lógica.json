@@ -36,7 +36,7 @@
 		],
 		"resposta_correta": ["Preto"],
 		"tema": "Lógica",
-		"forma_geometrica": "circulo"
+		"forma_geometrica": "círculo"
 	},
 	{
 		"id": 4,
@@ -62,7 +62,7 @@
 		],
 		"resposta_correta": ["Um piano"],
 		"tema": "Lógica",
-		"forma_geometrica": "circulo"
+		"forma_geometrica": "círculo"
 	},
 	{
 		"id": 6,
