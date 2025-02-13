@@ -1,0 +1,41 @@
+[
+	{
+		"id": 1,
+		"pergunta": "O que é teste de software?",
+		"alternativas": [
+			"Brincar com o computador",
+			"Verificar se um programa funciona direitinho",
+			"Desenhar telas coloridas",
+			"Criar jogos novos"
+		],
+		"resposta_correta": ["Verificar se um programa funciona direitinho"],
+		"tema": "História",
+		"forma_geometrica": "circulo"
+	},
+	{
+		"id": 2,
+		"pergunta": "Por que testamos um programa de computador?",
+		"alternativas": [
+			"Para deixá-lo mais lento",
+			"Para encontrar erros e consertá-los",
+			"Para mudar suas cores",
+			"Para apagá-lo"
+		],
+		"resposta_correta": ["Para encontrar erros e consertá-los"],
+		"tema": "História",
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"id": 3,
+		"pergunta": "O que é um bug em um programa?",
+		"alternativas": [
+			"Um inseto que entra no computador",
+			"Um erro que faz o programa não funcionar direito",
+			"Um jogo divertido",
+			"Um tipo de computador"
+		],
+		"resposta_correta": ["Um erro que faz o programa não funcionar direito"],
+		"tema": "História",
+		"forma_geometrica": "losango"
+	}
+]

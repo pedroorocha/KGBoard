@@ -1,7 +1,9 @@
+res://scenes/tabuleiro.tscn
+res://questions/História.json
+res://questions/Lógica.json
+res://questions/Português.json
+res://questions/Teste de Software.json
 res://scenes/menu_principal.tscn
 res://scenes/peao.tscn
-res://scenes/tabuleiro.tscn
 res://scenes/timer.tscn
-res://scripts/CountDown_Timer.gd
 res://scripts/tabuleiro.gd
-res://scripts/carta.gd

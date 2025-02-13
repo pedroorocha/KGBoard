@@ -23,7 +23,7 @@
 		],
 		"resposta_correta": ["Célula"],
 		"tema": "Ciências",
-		"forma_geometrica": "triângulo"
+		"forma_geometrica": "circulo"
 	},
 	{
 		"id": 3,
@@ -36,7 +36,7 @@
 		],
 		"resposta_correta": ["Oxigênio"],
 		"tema": "Ciências",
-		"forma_geometrica": "triângulo"
+		"forma_geometrica": "quadrado"
 	},
 	{
 		"id": 4,
@@ -61,6 +61,71 @@
 			"Um fenômeno climático"
 		],
 		"resposta_correta": ["Forma pela qual as plantas produzem seu proprio alimento para produzir energia"],
+		"tema": "Ciências",
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"id": 6,
+		"pergunta": "Qual é o maior animal do mundo?",
+		"alternativas": [
+			"Elefante",
+			"Baleia-azul",
+			"Tubarão-branco",
+			"Girafa"
+		],
+		"resposta_correta": ["Baleia-azul"],
+		"tema": "Ciências",
+		"forma_geometrica": "quadrado"
+	},
+	{
+		"id": 7,
+		"pergunta": "Quantos ossos tem o corpo humano?",
+		"alternativas": [
+			"100",
+			"206",
+			"300",
+			"150"
+		],
+		"resposta_correta": ["206"],
+		"tema": "Ciências",
+		"forma_geometrica": "losango"
+	},
+	{
+		"id": 8,
+		"pergunta": "O que causa o dia e a noite?",
+		"alternativas": [
+			"A Lua gira ao redor da Terra",
+			"A Terra gira em torno do Sol",
+			"A Terra gira em torno do seu próprio eixo",
+			"O Sol desaparece à noite"
+		],
+		"resposta_correta": ["A Terra gira em torno do seu próprio eixo"],
+		"tema": "Ciências",
+		"forma_geometrica": "circulo"
+	},
+	{
+		"id": 9,
+		"pergunta": "Qual é o maior oceano do mundo?",
+		"alternativas": [
+			"Oceano Atlântico",
+			"Oceano Índico",
+			"Oceano Ártico",
+			"Oceano Pacífico"
+		],
+		"resposta_correta": ["Oceano Pacífico"],
+		"tema": "Ciências",
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"id": 10,
+		"pergunta": "Por que o céu é azul?",
+		"alternativas": [
+			"Porque reflete o oceano",
+			"Porque a atmosfera dispersa a luz azul do Sol",
+			"Porque há um lençol azul no espaço",
+			"Porque as nuvens são azuis"
+		],
+		"resposta_correta": ["Porque a atmosfera dispersa a luz azul do Sol"],
 		"tema": "Ciências",
 		"forma_geometrica": "triângulo"
 	}

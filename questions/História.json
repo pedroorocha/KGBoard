@@ -63,5 +63,70 @@
 		"resposta_correta": ["George Washington"],
 		"tema": "História",
 		"forma_geometrica": "quadrado"
+	},
+	{
+		"id": 6,
+		"pergunta": "Quem foi o navegador que descobriu o Brasil em 1500?",
+		"alternativas": [
+			"Vasco da Gama",
+			"Pedro Álvares Cabral",
+			"Cristóvão Colombo",
+			"Fernão de Magalhães"
+		],
+		"resposta_correta": ["Pedro Álvares Cabral"],
+		"tema": "História",
+		"forma_geometrica": "losango"
+	},
+	{
+		"id": 7,
+		"pergunta": "Quem foi o navegador que descobriu o Brasil em 1500?",
+		"alternativas": [
+			"Vasco da Gama",
+			"Pedro Álvares Cabral",
+			"Cristóvão Colombo",
+			"Fernão de Magalhães"
+		],
+		"resposta_correta": ["Pedro Álvares Cabral"],
+		"tema": "História",
+		"forma_geometrica": "losango"
+	},
+	{
+		"id": 8,
+		"pergunta": "Quem foi a princesa que assinou a Lei Áurea, libertando os escravos no Brasil?",
+		"alternativas": [
+			"Princesa Isabel",
+			"Dona Maria I",
+			"Dona Leopoldina",
+			"Dona Carlota Joaquina"
+		],
+		"resposta_correta": ["Princesa Isabel"],
+		"tema": "História",
+		"forma_geometrica": "circulo"
+	},
+	{
+		"id": 9,
+		"pergunta": "O que aconteceu no dia 7 de setembro de 1822?",
+		"alternativas": [
+			"O Brasil foi descoberto",
+			"A escravidão foi abolida",
+			"Dom Pedro I declarou a independência do Brasil",
+			"O Brasil se tornou uma república"
+		],
+		"resposta_correta": ["Dom Pedro I declarou a independência do Brasil"],
+		"tema": "História",
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"id": 10,
+		"pergunta": "Qual era o principal produto que os portugueses extraíam no Brasil durante o período colonial??",
+		"alternativas": [
+			"Café",
+			"Açúcar",
+			"Ouro",
+			"Algodão"
+		],
+		"resposta_correta": ["Açúcar"],
+		"tema": "História",
+		"forma_geometrica": "triângulo"
 	}
 ]

@@ -1,0 +1,80 @@
+[
+	{
+		"id": 1,
+		"pergunta": "Qual é o próximo número na sequência: 2, 4, 6, 8, ___?",
+		"alternativas": [
+			"9",
+			"10",
+			"12",
+			"14"
+		],
+		"resposta_correta": ["10"],
+		"tema": "História",
+		"forma_geometrica": "triângulo"
+	},
+	{
+		"id": 2,
+		"pergunta": "Complete a sequência de figuras: 🔴, 🔵, 🔴, 🔵, ___",
+		"alternativas": [
+			"🔴",
+			"🔵",
+			"⚪",
+			"🟢"
+		],
+		"resposta_correta": ["🔴"],
+		"tema": "História",
+		"forma_geometrica": "losango"
+	},
+	{
+		"id": 3,
+		"pergunta": "Se todos os gatos são pretos e o Totó é um gato, qual é a cor do Totó?",
+		"alternativas": [
+			"Branco",
+			"Preto",
+			"Marrom",
+			"Cinza"
+		],
+		"resposta_correta": ["Preto"],
+		"tema": "História",
+		"forma_geometrica": "circulos"
+	},
+	{
+		"id": 4,
+		"pergunta": "O que é, o que é: quanto mais você tira, maior ele fica?",
+		"alternativas": [
+			"Um buraco",
+			"Um lápis",
+			"Um balão",
+			"Uma caixa"
+		],
+		"resposta_correta": ["Um buraco"],
+		"tema": "História",
+		"forma_geometrica": "losango"
+	},
+	{
+		"id": 5,
+		"pergunta": "O que é, o que é: tem chaves, mas não abre portas?",
+		"alternativas": [
+			"Um teclado",
+			"Um cadeado",
+			"Um piano",
+			"Um carro"
+		],
+		"resposta_correta": ["Um piano"],
+		"tema": "História",
+		"forma_geometrica": "circulo"
+	},
+	{
+		"id": 6,
+		"pergunta": "O que é, o que é: sempre vem, mas nunca chega?",
+		"alternativas": [
+			"O futuro",
+			"O passado",
+			"O presente",
+			"O vento"
+		],
+		"resposta_correta": ["O futuro"],
+		"tema": "História",
+		"forma_geometrica": "quadrado"
+	}
+]
